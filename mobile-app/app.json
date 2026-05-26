@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "Humber Event Hub",
+    "slug": "humber-event-hub",
+    "version": "1.0.0",
+    "scheme": "humber-event-hub",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#001f3b"
+    },
+    "ios": {
+      "bundleIdentifier": "com.humbereventhub",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.humbereventhub",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#001f3b"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          },
+          "android": {}
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
