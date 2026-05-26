@@ -1,6 +1,8 @@
-# EventApp
+# Backend
 
-## Run the backend
+## Run the application
+
+From the project root:
 
 ```bash
 cd backend
@@ -8,23 +10,21 @@ uv sync
 uv run python main.py
 ```
 
-The API will start on `http://127.0.0.1:8000`.
+What this does:
+- installs backend dependencies into the local `.venv`
+- runs Alembic migrations to `head`
+- starts the API on `http://127.0.0.1:8000`
 
-## Run `test-auth.html`
+## Useful environment variables
 
-Start the backend first, then from the project root serve the repo with a simple static server:
+- `EVENT_APP_HOST` - defaults to `127.0.0.1`
+- `EVENT_APP_PORT` - defaults to `8000`
+- `EVENT_APP_RELOAD` - defaults to `true`
+- `EVENT_APP_AUTH_PROVIDER` - use `mock` or `firebase`
+
+## Run tests
 
 ```bash
-python -m http.server 5500
+cd backend
+uv run python -m pytest tests -q
 ```
-
-Open this page in your browser:
-
-```text
-http://127.0.0.1:5500/test-auth.html
-```
-
-Notes:
-- `test-auth.html` calls `http://localhost:8000/auth/me`
-- if you want real Firebase auth, configure the backend for `EVENT_APP_AUTH_PROVIDER=firebase`
-- if you only want backend-side mock-token testing, use the API directly instead of `test-auth.html`
